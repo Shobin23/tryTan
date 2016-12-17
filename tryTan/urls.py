@@ -21,3 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/',include('profiles.urls')),
 ]
+
+'test'
