@@ -4,7 +4,10 @@
 
 {% block body %}
 
-{{task}}
+{% for album in object_list %}
 
+			<li><a href="/home/{{album.id}}"> {{album.efforts}} </a></li>
+				
+			{% endfor %}
 
 {% endblock %}

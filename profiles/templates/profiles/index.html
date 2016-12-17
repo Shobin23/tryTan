@@ -2,16 +2,16 @@
 
 {% block body %}
 
-	{% if all_task %}
+	{% if object_list %}
 		<H3> All Tasks </H3>
 		<ul>
-			{% for album in all_task %}
+			{% for album in object_list %}
 
 			<li><a href="/home/{{album.id}}"> {{album.main_task}} </a></li>
 				
 			{% endfor %}
 			
-		</ul>	
+		</ul>	 
 
 		{% else %}
 			<h3>No tasks Yet, Please add some task</h3>

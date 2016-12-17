@@ -1,22 +1,27 @@
+from django.views import generic
+from .models import Datamain,Subtask
 from django.shortcuts import render
-from .models import Datamain
-from django.http import HttpResponse
-from django.http import Http404
+
+class IndexView(generic.ListView):
+	template_name='profiles/index.html'
 
 
-def index(request):
-    all_task = Datamain.objects.all()
-    return render(request, 'profiles/index.html', {'all_task': all_task})
+	def get_queryset(self):
+		return Datamain.objects.all()
 
-    ''' this is newfor album in all_task:
-		url='/home/' + str(album.id)
-		html += '<a href="' + url + '">' + album.main_task+'</a><br>'''
+class DetailView(generic.DetailView):
+	model = Datamain
+	template_name= 'profiles/details.html'
+	
+	def get_queryset(self):
+		return Datamain.objects.all()
+	
 
-
-def detail(request, task_details):
+'''def detail(request, task_details):
     # return HttpResponse("<h2>Details For Task:"+str(task_details)+ "</h2>")
     try:
         task = Datamain.objects.get(pk=task_details)
     except Datamain.DoesNotExist:
         raise Http404("Task does not exist")
-    return render(request, 'profiles/details.html', {'task': task})
+    return render(request, 'profiles/details.html', {'task': task})'''
+
