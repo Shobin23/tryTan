@@ -8,7 +8,7 @@ def index(request):
 	all_task=Datamain.objects.all()
 	return render(request,'profiles/index.html',{'all_task': all_task})
 	
-
+	''' This is a new test'''
 	'''for album in all_task:
 		url='/home/' + str(album.id)
 		html += '<a href="' + url + '">' + album.main_task+'</a><br>'''
