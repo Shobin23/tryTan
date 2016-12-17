@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Tasker{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">﻿
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'profiles/style.css' %}" />
+
+
+    <nav class="navbar navbar-inverse">
+        <div class ="container-fluid">
+        <!-- logo -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" href="{% url 'profiles:index' %}">Welcome To Tasker</a>         
+            </div>
+
+            <div class="collapse navbar-collapse"    id="topNavBar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="{% url 'profiles:index' %}">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;New Task 
+                        </a>    
+                    </li>
+                    <li class="">
+                        <a href="{% url 'profiles:index' %}">
+                            <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>&nbsp;Dashboard   
+                        </a>    
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>
