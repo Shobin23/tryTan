@@ -8,9 +8,10 @@ class Datamain(models.Model):
     main_task = models.CharField(max_length=100)
     date_time = models.DateField()
     efforts = models.CharField(max_length=50)
+    status=models.BooleanField(default=False)
 
-    #def get_absolute_url(self):
-    	#return reverse('profiles:detail',kwargs={'pk':self.pk})
+    def get_absolute_url(self):
+        return reverse('profiles:detail',kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.main_task + ' - ' + self.efforts

@@ -1,13 +1,7 @@
 {% extends 'profiles/base.html' %}
 
-{% block title %}Details{% endblock %}
-
 {% block body %}
 
-{% for album in object_list %}
-
-			<li><a href="/home/{{album.id}}"> {{album.efforts}} </a></li>
-				
-			{% endfor %}
+<H3>The total efforts are  {{datamain.efforts}}</H3>
 
 {% endblock %}
