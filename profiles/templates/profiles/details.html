@@ -17,6 +17,19 @@
 </script>
 {% endif  %}
 
-<a href="{% url 'profiles:task-update' pk=datamain.id %}">Edit</a>
+
+<H3> All Sub Tasks </H3>
+		<ul>
+			{% for albums in object_list %}
+
+			</li> {{subtask.comments}} </li>
+
+			{% endfor %}
+
+		</ul>
+
+<a href="{% url 'profiles:task-update' pk=datamain.id %}" class="btn btn-primary">Edit</a>
+
+<a href="{% url 'profiles:subtask-add' %}" class="btn btn-primary">New Sub</a>
 
 {% endblock %}
