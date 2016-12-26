@@ -2,8 +2,7 @@ from django.views import generic
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .models import Datamain, Subtask
 from django.shortcuts import render
-
-
+from django.core.urlresolvers import reverse_lazy
 
 
 class IndexView(generic.ListView):
@@ -19,7 +18,19 @@ class DetailView(generic.DetailView):
 
 class TaskCreate(CreateView):
     model=Datamain
-    fields=['main_task','efforts']
+    fields=['main_task','date_time','efforts','status']
+
+class TaskUpdate(UpdateView):
+    model=Datamain
+    fields=['main_task','date_time','efforts','status']
+
+class TaskDelete(DeleteView):
+    model=Datamain
+    success_url = reverse_lazy('profiles:index')
+    fields=['main_task','date_time','efforts','status']
+
+
+
 # def DetailView(request, task_details):
 #     #return HttpResponse("<h2>Details For Task:"+str(task_details)+ "</h2>")
 #     try:

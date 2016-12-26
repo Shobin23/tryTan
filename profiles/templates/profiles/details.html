@@ -2,6 +2,21 @@
 
 {% block body %}
 
-<H3>The total efforts are  {{datamain.efforts}}</H3>
+{% if datamain.status %}
+
+<H3>The total efforts are {{datamain.efforts}}  hours <input id="check1"  type="checkbox" value="Completed?"></H3>
+
+<script language="javascript">
+        document.getElementById("check1").checked = true;
+</script>
+{% else %}
+
+<H3>The total efforts are {{datamain.efforts}}  hours <input id="check2"  type="checkbox" value="Completed?"></H3>
+<script language="javascript">
+        document.getElementById("check1").checked = false;
+</script>
+{% endif  %}
+
+<a href="{% url 'profiles:task-update' pk=datamain.id %}">Edit</a>
 
 {% endblock %}

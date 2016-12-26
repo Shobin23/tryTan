@@ -10,6 +10,10 @@ urlpatterns = [
 
 	url(r'^(?P<pk>[0-9]+)$',views.DetailView.as_view(),name='detail'),
 
-    url(r'task/add/$',views.CreateView.as_view(),name='task-add'),
+    url(r'^task/add/$',views.TaskCreate.as_view(),name='task-add'),
+
+    url(r'^task/(?P<pk>[0-9]+)$',views.TaskUpdate.as_view(), name='task-update'),
+
+    url(r'^task/(?P<pk>[0-9]+)/delete/$',views.TaskDelete.as_view(), name='task-delete'),
 ]
 
