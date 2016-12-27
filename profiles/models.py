@@ -20,7 +20,7 @@ class Datamain(models.Model):
 
 class Subtask(models.Model):
     sub_task = models.CharField(max_length=100)
-    comments = models.CharField(max_length=50)
+    main_task = models.CharField(max_length=50)
     status = models.BooleanField(default=False)
 
     def __str__(self):

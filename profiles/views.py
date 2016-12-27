@@ -39,6 +39,6 @@ class TaskDelete(DeleteView):
 class SubTaskCreate(CreateView):
     model=Subtask
     fields=['sub_task','comments','status']
-
+    success_url = reverse_lazy('profiles:index')
 
 
